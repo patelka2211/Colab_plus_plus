@@ -49,5 +49,5 @@ class Colab_plus_plus:
             self.bash_file = 'error.sh'
             with open(self.bash_file, 'w') as file:
                 file.write(f'''echo "\'.{self.file_extension}\' is not supported file extensions by \"Colab_plus_plus\" as of now."
-                echo "See supported file extensions at https://github.com/patelka2211/Colab_plus_plus#supported-languages"
+                echo "See supported file extensions at https://github.com/patelka2211/Colab_plus_plus#-supported-languages"
                 echo "or let me know what language you want to use, we will try to make it work if possible 🙌🏻. Just make a new issue at https://github.com/patelka2211/Colab_plus_plus/issues/new"''')

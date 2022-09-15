@@ -8,7 +8,7 @@ Run programs written in languages other than Python in Colab.
 
 To setup Colab_plus_plus in your Jupyter Notebook first run this command in first cell.
 
-```bash
+```py
 # Setting up Colab_plus_plus environment
 !curl https://raw.githubusercontent.com/patelka2211/Colab_plus_plus/main/Colab_plus_plus.py --output Colab_plus_plus.py
 
@@ -52,7 +52,7 @@ console.log('Hello world');
 
 ## ⚡️ Example
 
-Here is the example on [Colab](https://colab.research.google.com/drive/1GJnRiw_JkWBGbat7VjCzEAkJkSENBNLO?usp=sharing "Go to example").
+Here is the example on [Colab](https://colab.research.google.com/drive/1GJnRiw_JkWBGbat7VjCzEAkJkSENBNLO?usp=sharing "Go to example") and or download [Jupyter Notebook](./Colab%2B%2B.ipynb) example.
 
 ## ✅ Supported languages
 
