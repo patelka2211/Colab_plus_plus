@@ -1,0 +1,15 @@
+[
+    {
+        "Language": "C++",
+        "Valid extensions": [
+            "cpp",
+            "c++"
+        ]
+    },
+    {
+        "Language": "JavaScript",
+        "Valid extensions": [
+            "js"
+        ]
+    }
+]
