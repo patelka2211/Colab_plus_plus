@@ -23,8 +23,8 @@ SOFTWARE.
 '''
 
 import os
-# from google.colab import files
-# from zipfile import ZipFile
+from google.colab import files
+from zipfile import ZipFile
 
 
 class Colab_plus_plus:
@@ -54,7 +54,6 @@ class Colab_plus_plus:
             with open(self.bash_file, 'w') as file:
                 file.write(
                     f'node {"/".join([self.folder_name, self.file_name])}')
-            # print(f'node {"/".join([self.folder_name, self.file_name])}')
 
         elif self.file_extension in ['cpp', 'c++', 'c']:
 
