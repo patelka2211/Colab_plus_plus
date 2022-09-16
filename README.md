@@ -48,7 +48,7 @@ console.log('Hello world');
 !sh $js_file_obj.bash_file
 ```
 
-`Also see which extensions you can use with which language.` click [here](./alternative-extensions.json) to know more.
+`Also see which extensions you can use with which language.` click [here](./language-extensions.json) to know more.
 
 ## ⬇ How to download
 

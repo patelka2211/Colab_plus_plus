@@ -7,6 +7,18 @@
         ]
     },
     {
+        "Language": "C",
+        "Valid extensions": [
+            "c"
+        ]
+    },
+    {
+        "Language": "Java",
+        "Valid extensions": [
+            "java"
+        ]
+    },
+    {
         "Language": "JavaScript",
         "Valid extensions": [
             "js"
