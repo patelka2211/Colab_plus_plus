@@ -78,7 +78,7 @@ class Colab_plus_plus:
                     language = 'c'
 
                 file.write(
-                    f'g++ {"/".join([self.folder_name, self.file_name])} - o {"/".join([self.folder_name, f"{language}_output_file"])} && {"/".join([self.folder_name, f"{language}_output_file"])}')
+                    f'g++ {"/".join([self.folder_name, self.file_name])} -o {"/".join([self.folder_name, f"{language}_output_file"])} && {"/".join([self.folder_name, f"{language}_output_file"])}')
 
         elif self.file_extension in ['java']:
 
