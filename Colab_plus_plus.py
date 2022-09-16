@@ -23,8 +23,8 @@ SOFTWARE.
 '''
 
 import os
-from google.colab import files
-from zipfile import ZipFile
+# from google.colab import files
+# from zipfile import ZipFile
 
 
 class Colab_plus_plus:
@@ -53,12 +53,13 @@ class Colab_plus_plus:
 
             with open(self.bash_file, 'w') as file:
                 file.write(
-                    f'node {"/".join([self.folder_name,self.file_name])}')
+                    f'node {"/".join([self.folder_name, self.file_name])}')
+            # print(f'node {"/".join([self.folder_name, self.file_name])}')
 
         elif self.file_extension in ['cpp', 'c++', 'c']:
 
             if self.file_extension in ['cpp', 'c++']:
-                self.folder_name = './Cpp_codes'
+                self.folder_name = './CPP_codes'
 
             if self.file_extension in ['c']:
                 self.folder_name = './C_codes'
@@ -78,7 +79,7 @@ class Colab_plus_plus:
                     language = 'c'
 
                 file.write(
-                    f'g++ {"/".join([self.folder_name, self.file_name])} - o {"/".join(self.folder_name, f"{language}_output_file")} & & {"/".join(self.folder_name, f"{language}_output_file")}')
+                    f'g++ {"/".join([self.folder_name, self.file_name])} - o {"/".join([self.folder_name, f"{language}_output_file"])} && {"/".join([self.folder_name, f"{language}_output_file"])}')
 
         elif self.file_extension in ['java']:
 
