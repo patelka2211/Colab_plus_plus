@@ -60,13 +60,15 @@ cpp_file_obj.download()
 
 ## ⚡️ Example
 
-Here is the example on [Colab](https://colab.research.google.com/drive/1GJnRiw_JkWBGbat7VjCzEAkJkSENBNLO?usp=sharing "Go to example") and or download [Jupyter Notebook](./Colab%2B%2B.ipynb) example.
+Here is the example on [Colab](https://colab.research.google.com/github/patelka2211/Colab_plus_plus/blob/main/Colab%2B%2B.ipynb "Go to example") and or download [Jupyter Notebook](./Colab%2B%2B.ipynb) example.
 
 ## ✅ Supported languages
 
 |  Language  | Support |
 | :--------: | :-----: |
 |    C++     |   ✅    |
+|     C      |   ✅    |
+|    Java    |   ✅    |
 | JavaScript |   ✅    |
 
 ## 📝 License

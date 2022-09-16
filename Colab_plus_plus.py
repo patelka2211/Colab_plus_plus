@@ -33,7 +33,7 @@ class Colab_plus_plus:
         self.file_extension = self.file_name[-1]
         self.bash_file = f'{".".join(self.file_name[0:-1])}_{self.file_extension}.sh'
         self.file_name = '.'.join(self.file_name)
-        self.error = True
+        self.error = False
 
     def __make_dir(self, folder_name):
         if not os.path.exists(folder_name):
@@ -46,47 +46,69 @@ class Colab_plus_plus:
 
             self.__make_dir(self.folder_name)
 
-            with open(f'{self.folder_name}/{self.file_name}', 'w') as file:
+            with open("/".join([self.folder_name, self.file_name]), 'w', encoding='utf-8') as file:
                 file.write(source)
 
-            self.bash_file = f'{self.folder_name}/{self.bash_file}'
-
-            with open(self.bash_file, 'w') as file:
-                file.write(f'node {self.folder_name}/{self.file_name}')
-
-            self.error = False
-
-        elif self.file_extension in ['cpp', 'c++']:
-
-            self.folder_name = './Cpp_codes'
-
-            self.__make_dir(self.folder_name)
-
-            with open(f'{self.folder_name}/{self.file_name}', 'w') as file:
-                file.write(source)
-
-            self.bash_file = f'{self.folder_name}/{self.bash_file}'
+            self.bash_file = '/'.join([self.folder_name, self.bash_file])
 
             with open(self.bash_file, 'w') as file:
                 file.write(
-                    f'g++ {self.folder_name}/{self.file_name} -o {self.folder_name}/cpp_output_file && {self.folder_name}/cpp_output_file')
+                    f'node {"/".join([self.folder_name,self.file_name])}')
 
-            self.error = False
+        elif self.file_extension in ['cpp', 'c++', 'c']:
+
+            if self.file_extension in ['cpp', 'c++']:
+                self.folder_name = './Cpp_codes'
+
+            if self.file_extension in ['c']:
+                self.folder_name = './C_codes'
+
+            self.__make_dir(self.folder_name)
+
+            with open("/".join([self.folder_name, self.file_name]), 'w', encoding='utf-8') as file:
+                file.write(source)
+
+            self.bash_file = '/'.join([self.folder_name, self.bash_file])
+
+            with open(self.bash_file, 'w') as file:
+                language = ''
+                if self.file_extension in ['cpp', 'c++']:
+                    language = 'cpp'
+                else:
+                    language = 'c'
+
+                file.write(
+                    f'g++ {"/".join([self.folder_name, self.file_name])} - o {"/".join(self.folder_name, f"{language}_output_file")} & & {"/".join(self.folder_name, f"{language}_output_file")}')
+
+        elif self.file_extension in ['java']:
+
+            self.folder_name = './Java_codes'
+
+            self.__make_dir(self.folder_name)
+
+            with open("/".join([self.folder_name, self.file_name]), 'w', encoding='utf-8') as file:
+                file.write(source)
+
+            self.bash_file = '/'.join([self.folder_name, self.bash_file])
+
+            with open(self.bash_file, 'w', encoding='utf-8') as file:
+                file.write(
+                    f'''javac {'/'.join([self.folder_name,self.file_name])} && java -cp {self.folder_name} {self.file_name.split('.')[0:-1][0]}''')
+
         else:
             self.folder_name = './error'
 
             self.__make_dir(self.folder_name)
 
-            self.bash_file = f'{self.folder_name}/error.sh'
+            self.bash_file = '/'.join([self.folder_name, 'error.sh'])
 
             with open(self.bash_file, 'w') as file:
-                file.write(f'''echo "\'.{self.file_extension}\' is not supported file extensions by \"Colab_plus_plus\" as of now."
-                echo "See supported file extensions at https://github.com/patelka2211/Colab_plus_plus#-supported-languages"
-                echo "or let me know what language you want to use, we will try to make it work if possible 🙌🏻. Just make a new issue at https://github.com/patelka2211/Colab_plus_plus/issues/new"''')
+                file.write(f'echo "\'.{self.file_extension}\' is not supported file extensions by \"Colab_plus_plus\" as of now."\necho "See supported file extensions at https://github.com/patelka2211/Colab_plus_plus#-supported-languages"\necho "or let me know what language you want to use, we will try to make it work if possible 🙌🏻. Just make a new issue at https://github.com/patelka2211/Colab_plus_plus/issues/new"')
+
+            self.error = True
 
     def download(self):
         if not self.error:
-            self.zip_file = f"{self.folder_name}/{self.file_name.replace('.', '_')}.zip"
-            with ZipFile(self.zip_file, 'w') as zip:
-                zip.write(f'{self.folder_name}/{self.file_name}')
-            files.download(self.zip_file)
+            files.download("/".join([self.folder_name, self.file_name]))
+        else:
+            print('File can\'t download. There maybe some error in code.')
