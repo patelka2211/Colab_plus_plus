@@ -50,6 +50,14 @@ console.log('Hello world');
 
 `Also see which extensions you can use with which language.` click [here](./alternative-extensions.json) to know more.
 
+## ⬇ How to download
+
+Example to download files
+
+```py
+cpp_file_obj.download()
+```
+
 ## ⚡️ Example
 
 Here is the example on [Colab](https://colab.research.google.com/drive/1GJnRiw_JkWBGbat7VjCzEAkJkSENBNLO?usp=sharing "Go to example") and or download [Jupyter Notebook](./Colab%2B%2B.ipynb) example.
