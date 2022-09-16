@@ -86,7 +86,7 @@ class Colab_plus_plus:
 
     def download(self):
         if not self.error:
-            self.zip_file = f"{self.file_name.replace('.', '_')}.zip"
+            self.zip_file = f"{self.folder_name}/{self.file_name.replace('.', '_')}.zip"
             with ZipFile(self.zip_file, 'w') as zip:
                 zip.write(f'{self.folder_name}/{self.file_name}')
             files.download(self.zip_file)
