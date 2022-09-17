@@ -74,11 +74,17 @@ class Colab_plus_plus:
                 language = ''
                 if self.file_extension in ['cpp', 'c++']:
                     language = 'cpp'
+                    compiler = 'g++'
+                    commands = '-std=c++17 -g'
                 else:
                     language = 'c'
+                    compiler = 'gcc'
+                    commands = ''
+
+                self.output_file = self.file_name.split('.')[0:-1][0]
 
                 file.write(
-                    f'g++ {"/".join([self.folder_name, self.file_name])} -o {"/".join([self.folder_name, f"{language}_output_file"])} && {"/".join([self.folder_name, f"{language}_output_file"])}')
+                    f'{compiler} {commands} {"/".join([self.folder_name, self.file_name])} -o {"/".join([self.folder_name, self.output_file])} && {"/".join([self.folder_name, self.output_file])}')
 
         elif self.file_extension in ['java']:
 
@@ -91,9 +97,11 @@ class Colab_plus_plus:
 
             self.bash_file = '/'.join([self.folder_name, self.bash_file])
 
+            self.output_file = self.file_name.split('.')[0:-1][0]
+
             with open(self.bash_file, 'w', encoding='utf-8') as file:
                 file.write(
-                    f'''javac {'/'.join([self.folder_name,self.file_name])} && java -cp {self.folder_name} {self.file_name.split('.')[0:-1][0]}''')
+                    f'''javac {'/'.join([self.folder_name,self.file_name])} && java -cp {self.folder_name} {self.output_file}''')
 
         else:
             self.folder_name = './error'
@@ -109,6 +117,23 @@ class Colab_plus_plus:
 
     def download(self):
         if not self.error:
-            files.download("/".join([self.folder_name, self.file_name]))
+
+            if self.file_extension in ['js']:
+                files.download("/".join([self.folder_name, self.file_name]))
+
+            elif self.file_extension in ['cpp', 'c++', 'c', 'java']:
+                self.zip_file = '/'.join([self.folder_name,
+                                         '.'.join([self.file_name.replace('.', '_'), 'zip'])])
+
+                output_file_ext = '.class' if self.file_extension == 'java' else ''
+
+                with ZipFile(self.zip_file, 'w') as zip:
+                    zip.write('/'.join([self.folder_name, self.file_name]))
+                    if os.path.exists('/'.join([self.folder_name, ''.join([self.output_file, output_file_ext])])):
+                        zip.write(
+                            '/'.join([self.folder_name, ''.join([self.output_file, output_file_ext])]))
+
+                files.download(self.zip_file)
+
         else:
-            print('File can\'t download. There maybe some error in code.')
+            print('File can\'t be downloaded. There maybe some error in code.')
