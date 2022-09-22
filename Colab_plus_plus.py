@@ -139,7 +139,7 @@ class Colab_plus_plus:
             print('File can\'t be downloaded. There maybe some error in code.')
 
 
-print(f'\033[1mThank you for using "patelka2211 / \033[38;2;92;164;248mColab_plus_plus\033[0m\033[0m"')
+print(f'\033[1m\n\nThank you for using "patelka2211 / \033[38;2;92;164;248mColab_plus_plus\033[0m\033[0m"')
 print(f'\033[1mYou can see project on GitHub: https://github.com/patelka2211/Colab_plus_plus\033[0m')
 print(f'\033[1mOther projects by Kartavya Patel: https://patelka2211.github.io/view?tab=repo\033[0m')
 print(
