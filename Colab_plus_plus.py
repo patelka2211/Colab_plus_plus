@@ -137,3 +137,18 @@ class Colab_plus_plus:
 
         else:
             print('File can\'t be downloaded. There maybe some error in code.')
+
+
+print(f'\033[1mThank you for using "patelka2211 / \033[38;2;92;164;248mColab_plus_plus\033[0m\033[0m"')
+print(f'\033[1mYou can see project on GitHub: https://github.com/patelka2211/Colab_plus_plus\033[0m')
+print(f'\033[1mOther projects by Kartavya Patel: https://patelka2211.github.io/view?tab=repo\033[0m')
+print(
+    f'''\n\nDeveloped in 🇮🇳 with \u2764\uFE0F by \033[1m\033[38;2;92;164;248mKartavya Patel\033[0m\033[0m''')
+
+# Command line output editing
+# BLUE = '\033[38;2;92;164;248m'
+# WARNING = '\033[93m'
+# FAIL = '\033[91m'
+# ENDC = '\033[0m'
+# BOLD = '\033[1m'
+# UNDERLINE = '\033[4m'
