@@ -1,6 +1,6 @@
 # Colab plus plus
 
-Run programs written in languages other than Python in Colab.
+Run programs written in languages other than Python in Colab. [View Notion page](https://kpverse.notion.site/Colab-f9eacc1c57334b1c86eed2798979dd44)
 
 ![](https://opengraph.githubassets.com/1/patelka2211/Colab_plus_plus)
 
