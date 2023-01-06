@@ -2,7 +2,9 @@
 
 You can now run programs written in different programming languages as well as Python in Colab. [View Notion page](https://kpverse.notion.site/Colab-f9eacc1c57334b1c86eed2798979dd44)
 
-![](https://opengraph.githubassets.com/1/patelka2211/Colab_plus_plus)
+![](./Colab%2B%2B_by_KP.jpg)
+
+<!-- ![](https://opengraph.githubassets.com/1/patelka2211/Colab_plus_plus) -->
 
 ## ⚙️ Setup
 
